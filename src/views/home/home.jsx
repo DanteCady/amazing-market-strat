@@ -1,10 +1,10 @@
 import React from "react";
-
+import TradingViewTicker from "../../components/specific/home/ticker";
 
 const Home = () => {
     return (
         <div>
-        <h1>Home</h1>
+            <TradingViewTicker />
         </div>
     );
     }   
