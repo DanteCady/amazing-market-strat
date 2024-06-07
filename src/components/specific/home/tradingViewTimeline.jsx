@@ -1,22 +1,17 @@
 import React, { useEffect } from 'react';
 
-const TradingViewTicker = () => {
+const TradingViewTimeline = () => {
   useEffect(() => {
     // Create the script tag
     const script = document.createElement('script');
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-timeline.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
-      "symbols": [
-        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index"},
-        {"proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD"},
-        {"proName": "FX_IDC:EURUSD", "title": "EUR to USD"},
-        {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
-        {"proName": "BITSTAMP:ETHUSD", "title": "Ethereum"}
-      ],
-      "showSymbolLogo": true,
+      "feedMode": "all_symbols",
       "isTransparent": false,
-      "displayMode": "adaptive",
+      "displayMode": "regular",
+      "width": 400,
+      "height": '100vh',
       "colorTheme": "dark",
       "locale": "en"
     });
@@ -31,7 +26,7 @@ const TradingViewTicker = () => {
   }, []);
 
   return (
-    <div className="tradingtxtview-widget-container">
+    <div className="tradingview-widget-container">
       <div className="tradingview-widget-container__widget"></div>
       <div className="tradingview-widget-copyright">
       </div>
@@ -39,4 +34,4 @@ const TradingViewTicker = () => {
   );
 };
 
-export default TradingViewTicker;
+export default TradingViewTimeline;
