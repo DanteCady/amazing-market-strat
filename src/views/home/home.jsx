@@ -8,7 +8,7 @@ import TradingViewTimeline from "../../components/specific/home/tradingViewTimel
 
 const Home = () => {
     return (
-        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw', m: 0, padding: 2 }}>
+        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw',  }}>
             <Grid item xs={12}> {/* Ticker */}
                 <TradingViewTicker />
             </Grid>
