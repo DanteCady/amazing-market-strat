@@ -1,16 +1,16 @@
 import React from "react"
-import { BrowserRouter as Router, Route, BrowserRouter} from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 // Views Imports
-import Home from "./views/home"
+import Home from "./views/home/home"
 
 function App() {
   return (
-  <BrowserRouter>
     <Router>
-      <Route path="/" component={Home} />
+      <Routes>
+      <Route path="/" Component={Home} />
+      </Routes>
     </Router>
-  </BrowserRouter>
   );
 }
 
