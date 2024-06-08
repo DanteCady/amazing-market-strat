@@ -3,9 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import Logo from '../../../assets/Crown.png';
@@ -15,6 +12,7 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -26,7 +24,7 @@ const Search = styled('div')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(3),
     width: 'auto',
   },
 }));
@@ -45,14 +43,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+    [theme.breakpoints.up('md')]: {
+      width: '30ch',
       '&:focus': {
-        width: '20ch',
+        width: '40ch',
       },
     },
   },
@@ -77,11 +74,11 @@ export default function MyAppBar() {
   return (
     <AppBar position="static" sx={{ backgroundColor: '#131722', }}>
       <Toolbar>
-        <img src={Logo} alt="Logo" style={{ height: '50px', width: '50px', marginRight: '10px', marginBottom: '15px' }} />
-        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+        <img src={Logo} alt="Logo" style={{ height: '50px', width: '50px', marginRight: '10px' }} />
+        {/* <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', }}>
           Amazing Market Strategies
-        </Typography>
-        <Search>
+        </Typography> */}
+        <Search sx={{ flexGrow: 2 }}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
