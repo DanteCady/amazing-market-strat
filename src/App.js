@@ -2,13 +2,13 @@ import React from "react"
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom"
 
 // Views Imports
-import Home from "./views/home/home"
+import Dashboard from "./views/dashboard/dashboard"
 
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" Component={Home} />
+      <Route path="/dashboard" Component={Dashboard} />
       </Routes>
     </Router>
   );

@@ -2,9 +2,9 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 
 // Components Imports
-import TradingViewTicker from "../../components/specific/home/ticker";
-import TradingViewTimeline from "../../components/specific/home/tradingViewTimeline";
-import AppBar from "../../components/specific/home/appBar";
+import TradingViewTicker from "../../components/specific/dashboard/ticker";
+import TradingViewTimeline from "../../components/specific/dashboard/tradingViewTimeline";
+import AppBar from "../../components/specific/dashboard/appBar";
 
 const Home = () => {
     return (
