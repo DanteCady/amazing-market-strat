@@ -8,6 +8,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
+import Logo from '../../../assets/Crown.png';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import PeopleIcon from '@mui/icons-material/People';
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HelpIcon from '@mui/icons-material/Help';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -60,13 +67,18 @@ const NavLinks = styled('div')(({ theme }) => ({
 const LinkButton = styled(Button)(({ theme }) => ({
   color: theme.palette.common.white,
   marginLeft: theme.spacing(2),
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  minWidth: '80px',
 }));
 
 export default function MyAppBar() {
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#131722' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#131722', }}>
       <Toolbar>
-        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1}}>
+        <img src={Logo} alt="Logo" style={{ height: '50px', width: '50px', marginRight: '10px', marginBottom: '15px' }} />
+        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
           Amazing Market Strategies
         </Typography>
         <Search>
@@ -79,10 +91,12 @@ export default function MyAppBar() {
           />
         </Search>
         <NavLinks>
-          <LinkButton>Pricing</LinkButton>
-          <LinkButton>Products</LinkButton>
-          <LinkButton>Support</LinkButton>
-          <LinkButton>Login</LinkButton>
+          <LinkButton startIcon={<DashboardIcon />}>Dashboard</LinkButton>
+          <LinkButton startIcon={<PeopleIcon />}>Community</LinkButton>
+          <LinkButton startIcon={<WidgetsIcon />}>Widgets</LinkButton>
+          <LinkButton startIcon={<SettingsIcon />}>Settings</LinkButton>
+          <LinkButton startIcon={<HelpIcon />}>Help</LinkButton>
+          <LinkButton startIcon={<LogoutIcon />}>Logout</LinkButton>
         </NavLinks>
       </Toolbar>
     </AppBar>

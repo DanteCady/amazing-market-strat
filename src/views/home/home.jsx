@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <>
         <AppBar />        
-        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw' }}>
+        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw'}}>
             <Grid item xs={12}> {/* Ticker */}
                 <TradingViewTicker />
             </Grid>
