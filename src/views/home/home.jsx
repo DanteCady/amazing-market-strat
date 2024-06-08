@@ -4,19 +4,24 @@ import Grid from '@mui/material/Grid';
 // Components Imports
 import TradingViewTicker from "../../components/specific/home/ticker";
 import TradingViewTimeline from "../../components/specific/home/tradingViewTimeline";
-
+import AppBar from "../../components/specific/home/appBar";
 
 const Home = () => {
     return (
-        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw',  }}>
+        <>
+        <AppBar />        
+        <Grid container spacing={2} sx={{ height: '100vh', width: '100vw' }}>
             <Grid item xs={12}> {/* Ticker */}
                 <TradingViewTicker />
             </Grid>
-            <Grid item xs={12} md={8}> {/* Timeline */}
+            <Grid item xs={12} md={8} sx={{ order: { xs: 2, md: 2 } }}> {/* Main Content */}
+            
+            </Grid>
+            <Grid item xs={12} md={4} sx={{ order: { xs: 3, md: 3 } }}> {/* Timeline */}
                 <TradingViewTimeline />
             </Grid>
-   
         </Grid>
+        </>
     );
 }
 
