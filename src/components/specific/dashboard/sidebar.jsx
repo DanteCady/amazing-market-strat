@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
-import Box from '@mui/material/Box';
+import { Box, Typography, List, ListItem, ListItemText } from '@mui/material';
 
-const TradingViewTimeline = () => {
+const Sidebar = ({ stories }) => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://s3.tradingview.com/external-embedding/embed-widget-timeline.js";
     script.async = true;
     script.innerHTML = JSON.stringify({
       "feedMode": "all_symbols",
-      "isTransparent": false,
-      "displayMode": "regular",
-      "width": 300, // Adjust width to match the sidebar
-      "height": 850,
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "width": 300,
+      "height": 550,
       "colorTheme": "dark",
       "locale": "en"
     });
@@ -29,10 +29,18 @@ const TradingViewTimeline = () => {
   }, []);
 
   return (
-    <Box className="tradingview-widget-container" sx={{ mt: 2 }}>
-      <Box className="tradingview-widget-container__widget"></Box>
+    <Box
+      sx={{
+        width: '300px',
+        flexShrink: 0,
+        padding: '20px',
+      }}
+    >
+      <Box className="tradingview-widget-container" sx={{ mt: 2 }}>
+        <Box className="tradingview-widget-container__widget"></Box>
+      </Box>
     </Box>
   );
 };
 
-export default TradingViewTimeline;
+export default Sidebar;

@@ -19,6 +19,8 @@ import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Avatar } from '@mui/material';
 import Logo from '../../../assets/Crown.png';
 
 const Search = styled('div')(({ theme }) => ({
@@ -91,7 +93,13 @@ export default function MyAppBar() {
   };
 
   const drawerList = (
-    <List>
+    <List sx={{ backgroundColor: '#131722', color: 'white'}}>
+      <ListItem>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+          Menu
+        </Typography>
+          <Avatar alt="User" src='../../../assets/sampleImage.jpg' sx={{marginLeft: '15px'}}/>
+      </ListItem>
       <ListItem button>
         <ListItemIcon><DashboardIcon /></ListItemIcon>
         <ListItemText primary="Dashboard" />
@@ -111,6 +119,10 @@ export default function MyAppBar() {
       <ListItem button>
         <ListItemIcon><HelpIcon /></ListItemIcon>
         <ListItemText primary="Help" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon><NotificationsIcon /></ListItemIcon>
+        <ListItemText primary="Notifications" />
       </ListItem>
       <ListItem button>
         <ListItemIcon><LogoutIcon /></ListItemIcon>
@@ -138,8 +150,10 @@ export default function MyAppBar() {
             <LinkButton startIcon={<PeopleIcon />}>Community</LinkButton>
             <LinkButton startIcon={<WidgetsIcon />}>Widgets</LinkButton>
             <LinkButton startIcon={<SettingsIcon />}>Settings</LinkButton>
+            <LinkButton startIcon={<NotificationsIcon />}>Notifications</LinkButton>
             <LinkButton startIcon={<HelpIcon />}>Help</LinkButton>
             <LinkButton startIcon={<LogoutIcon />}>Logout</LinkButton>
+          <Avatar alt="User" src='../../../assets/sampleImage.jpg' sx={{marginLeft: '15px'}}/>
           </NavLinks>
           <IconButton
             color="inherit"
